@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.olrando.mapper.StudentCourseMapper">
+    <!--    查找学生名字课程名称-->
+    <select  id="findAll" resultType="com.olrando.pojo.StudentCourse">
+        select s.name as studentName,s.no as no,s.sex as sex, c.name as courseName, sc.grade
+        from student_course sc
+                 join student s on sc.studentId = s.id
+                 join course c on sc.courseId = c.id
+    </select>
+</mapper>

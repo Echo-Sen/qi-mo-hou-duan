@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.olrando.mapper.StudentMapper">
+    <insert id="addStudent">
+        insert into student (name, sex, age, no, address, phone, email)
+        values (#{name}, #{sex}, #{age}, #{no}, #{address}, #{phone}, #{email})
+    </insert>
+    <delete id="deleteStudent">
+        delete
+        from student
+        where id = #{id}
+    </delete>
+    <select id="findByNo" resultType="com.olrando.pojo.Student">
+        select *
+        from student
+        where no = #{no}
+    </select>
+</mapper>
